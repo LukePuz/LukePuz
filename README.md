@@ -1,16 +1,16 @@
-## Hi there 👋
+Hi, I’m Luke Puzenski
+High school student building AI-powered tools with Python and exploring machine learning systems.
 
-<!--
-**LukePuz/LukePuz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Current Focus
+-Python development
+-Working with APIs
+-Building structured AI tools
+-Learning about model reliability and validation
 
-Here are some ideas to get you started:
+Projects
+-AI Meeting Notes Extractor (in progress)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Currently Learning
+-Python fundamentals
+-SQL (upcoming)
+-Foundations of machine learning
