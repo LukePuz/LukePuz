@@ -1,39 +1,43 @@
-# Hi, I'm Luke
+# Luke Puzenski
 
-I build autonomous systems at the intersection of quantitative finance and applied AI. Most
-of my work runs locally, acts on live data, and is measured against reality rather than a
-backtest — I care about whether a system's decisions actually hold up once the outcome exists.
+I build autonomous systems for markets and games, mostly in Python and mostly running locally
+on my own hardware. I'm a high school student at Thomas Jefferson High School for Science and
+Technology (TJHSST).
 
 ---
 
 ### Helios — autonomous trading research system
-A multi-agent pipeline that ingests market events (SEC filings, options flow, insider &
-congressional trades, news, macro), has local LLMs (Qwen 2.5 7B/72B via Ollama) write
-investment theses with calibrated conviction scores, and sizes every position through a
-deterministic, unit-tested risk layer that can veto the model. Runs live at small size through
-Interactive Brokers. Every decision is logged with its thesis and realized alpha vs. SPY, so
-the system's conviction can be evaluated forward — there are no backtests, on purpose: a
-general-purpose LLM may have memorized the historical period, so only decisions made before
-their outcomes existed count as evidence.
-<br>Python · Celery · Postgres · ChromaDB · Ollama · Interactive Brokers · ~28k LOC
+Helios watches the market all day. It pulls in SEC filings, options flow, insider and
+congressional trades, news, and macro data, then runs each event through a pipeline of local
+LLMs (Qwen 2.5, 7B and 72B, on two RTX 3090s via Ollama). The models write a thesis and a
+conviction score. A separate rule-based risk layer that the model cannot override decides the
+actual position size and stop. It trades live at small size through Interactive Brokers.
 
-### Clash Royale AI — computer vision + reinforcement learning
-An agent that plays Clash Royale on a real device. Trains its own OpenCV + PyTorch detectors
-and classifiers (cards, troops, tower HP, elixir) from screen capture, then drives a
-policy/reward loop that issues moves over ADB. End-to-end perception to decision to control.
-<br>Python · PyTorch · OpenCV · ADB/scrcpy
+I don't backtest it. The models were trained on years of market history, so testing them on
+the past mostly measures memory instead of skill. Every trade is logged with its thesis and
+its return against SPY, and judged only after the outcome is in.
+
+Python, Celery, Postgres, Ollama, Interactive Brokers.
+
+### Clash Royale AI — computer vision and reinforcement learning
+An agent that plays Clash Royale on a real phone. I trained the vision models myself with
+OpenCV and PyTorch to read cards, troops, tower health, and elixir off screenshots. A policy
+then picks moves and sends them to the device over ADB.
+
+Python, PyTorch, OpenCV, ADB.
 
 ### Momentum Scanner
-A live equity scanner that ranks candidates by a composite conviction model over Interactive
-Brokers + Polygon market data.
-<br>Python · IBKR · Polygon
+Scans stocks live and ranks them with a conviction score built from Interactive Brokers and
+Polygon data.
 
-### Helios Research — retail-facing market-analysis platform (early stage)
-A consumer layer on top of Helios's analysis engine (regime detection, filing/flow monitoring,
-macro) so retail investors can use what the trading system does internally. First module
-(market regime) working end-to-end on live data.
+Python, IBKR, Polygon.
+
+### Helios Research — early-stage research platform
+A consumer version of Helios's analysis engine (regime detection, filing and flow monitoring,
+macro) so regular investors can use what the trading system does internally. The market-regime
+piece works end to end on live data so far.
 
 ---
 
-Currently a student at Thomas Jefferson High School for Science & Technology (TJHSST),
-exploring research in quantitative finance and machine learning.
+Right now I'm going deeper on machine learning and on how to tell whether a model is actually
+any good.
